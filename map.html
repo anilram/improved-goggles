@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model and Mapbox Viewer</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <link href="./bundle/css/map.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Map Controls Section -->
+            <div class="section-title" id="Madagascar-sub">Madagascar</div>
+            <div class="layer-sidebar">
+                <div id="layer-container">
+                    <div class="subsection-title" id="layer-sub">Layers
+                       
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="layer-sidebar">
+                <div id="indices-container">
+                    <div class="subsection-title" id="index-sub">Indices
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="layer-sidebar">
+                <div id="farms-container">
+                    <div class="subsection-title" id="farm-sub">Farms
+                       
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+        
+        <!-- Content Area -->
+        <div class="content-container">
+            <!-- Map Container -->
+            <div id="map-container" class="map-container"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./bundle/js/map.js"></script>
+</body>
+</html>
