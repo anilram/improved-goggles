@@ -3,44 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sankalp Map View</title>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="bundle/css/map.css">
+    <title>3D Model and Mapbox Viewer</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <link href="./bundle/css/map.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    
+
     <div class="main-container">
         <!-- Sidebar -->
         <div class="sidebar">
-            <h2 class="section-title">Sankalp</h2>
-            <div id="layer-toggles">
-                <h3 class="section-title">Layers</h3>
-                <!-- Layer buttons will be added here dynamically -->
+            <!-- Map Controls Section -->
+            <div class="section-title" id="Madagascar-sub">Madagascar</div>
+            <div class="layer-sidebar">
+                <div id="layer-container">
+                    <div class="subsection-title" id="layer-sub">Layers
+                       
+                    </div>
+                    
+                </div>
             </div>
-        </div>
+            <div class="layer-sidebar">
+                <div id="indices-container">
+                    <div class="subsection-title" id="index-sub">Indices
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="layer-sidebar">
+                <div id="farms-container">
+                    <div class="subsection-title" id="farm-sub">Farms
+                       
+                    </div>
+                </div>
+            </div>
 
-        <!-- Map Container -->
-        <div id="map-container">
-            <div id="map"></div>
-        </div>
-
-        <!-- Model Viewer -->
-        <div id="model-viewer" class="model-viewer">
-        
-                <button class="close-button">&times;</button>
            
-            <iframe id="modelFrame" allowfullscreen="1"></iframe>
-            <iframe id="floorPlanFrame" allowfullscreen="1"></iframe>
         </div>
-
-        <!-- Sidebar Toggle Button -->
-        <button class="sidebar-toggle">
-            <i class="fas fa-bars"></i>
-        </button>
+        
+        <!-- Content Area -->
+        <div class="content-container">
+            <!-- Map Container -->
+            <div id="map-container" class="map-container"></div>
+        </div>
     </div>
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <!-- Scripts -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="bundle/js/map.js"></script>
+    <script src="./bundle/js/map.js"></script>
 </body>
 </html>
