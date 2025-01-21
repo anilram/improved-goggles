@@ -367,9 +367,9 @@ function addFarmBoundaries(farmGeoJSON) {
         <p><strong>Crop Type:</strong> ${cropType}</p>
         <p><strong>Vegetated:</strong> ${vegetated}</p>
         <p><strong>Perimeter:</strong> ${PERIMETER}</p>
-        <p><strong>Fertilizer Urea:</strong> ${urea || 0} kg</p>
-        <p><strong>Fertilizer SSP:</strong> ${ssp || 0} kg</p>
-        <p><strong>Fertilizer MOP:</strong> ${mop || 0} kg</p>
+        <p><strong>Fertilizer Urea:</strong> ${urea || 0}</p>
+        <p><strong>Fertilizer SSP:</strong> ${ssp || 0}</p>
+        <p><strong>Fertilizer MOP:</strong> ${mop || 0}</p>
       `;
 
       // Add functionality to close the hover pane
