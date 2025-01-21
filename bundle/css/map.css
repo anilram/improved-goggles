@@ -1,11 +1,154 @@
-/* Sidebar for layer checkboxes */
-.layer-sidebar{
+/* Sidebar Styles */
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: #f0f4f0; /* Soft greenish-gray background */
+  padding: 20px;
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 transparent;
+}
+
+
+/* Buttons in Sections */
+#madagascar-sub .button-container,
+#farms-sub .button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.button-container button {
+  padding: 8px 16px;
+  background-color: #4CAF50; /* Earthy green button color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-container button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  transform: scale(1.05);
+}
+
+/* Section Title */
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 2px;
+  justify-content: space-between;
+  border-bottom: 2px solid #426c44; /* Earthy green accent color */
+}
+/* Subsection Title */
+.subsection-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+  padding-bottom: 8px;
+  justify-content: space-between;
+  border-bottom: 2px solid #426c44; /* Earthy green accent color */
+}
+
+/* Buttons Alignment in Subsections */
+#farms-sub,
+#madagascar-sub {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Content and Model Viewer Styles */
+.content-container {
+  flex: 1;
   margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Home Button */
+.home-button {
+  background: transparent;
+  color: green;
+  cursor: pointer;
+  border: none;
+  font-size: 27px;
+  display: flex;
+  align-items: center;
+}
+
+.home-button i {
+  margin-right: 0px;
+}
+.home-button :hover {
+  color: rgb(0, 176, 0);
+  transform: scale(0.85); 
+}
+
+/* Adjust View Button */
+.adjust-view-container button {
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+}
+.adjust-view-container button:hover {
+  color: #fff; /* Change text color to white on hover */
+  transform: scale(1.2); /* Slightly increase the size */
+}
+
+.adjust-view-container i {
+  margin-top:5px;
+}
+
+/* Open Button */
+.open-button {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  background: white;
+  color: green;
+  cursor: pointer;
+  border: 2px solid green;
+  font-size: 23px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  padding: 5px 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  
+}
+
+.open-button:hover {
+  transform: scale(0.9);
+}
+
+/* Sidebar for layer checkboxes */
+.layer-sidebar {
+  margin-left: 15px;
+  margin-top:25px;
   width: 230px;
-  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
   overflow-y: auto;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
 }
 
 .layer-controls-container {
@@ -17,7 +160,7 @@
 /* Layer checkbox container */
 .layer-checkbox-container {
   margin-bottom: 8px;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee00;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -25,76 +168,16 @@
 .checkbox-wrapper {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px;
-  background-color: #f8f8f8;
+  height:14px;
+  gap: 5px;
+  padding: 6px;
+  background-color:  #f0f4f0;
   cursor: pointer;
 }
 
 .checkbox-wrapper:hover {
-  background-color: #f0f0f0;
-}
-
-.tree-arrow {
-  cursor: pointer;
-  user-select: none;
-  font-size: 12px;
-  color: #666;
-  width: 16px;
-  display: inline-block;
-  text-align: center;
-}
-
-.tree-button-container {
-  padding: 8px;
-  background-color: white;
-  border-radius: 0 0 4px 4px;
-}
-
-.tree-button {
-  display: flex;
-  align-items: center;
-  width: 85%;
-  padding: 8px 12px;
-  margin-bottom: 4px;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: left;
-  font-size: 12px;
-  transition: all 0.2s ease;
-}
-
-.tree-button i {
-  margin-right: 8px;
-  width: 16px;
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-}
-
-.tree-button:hover {
-  background-color: #e9e9e9;
-  transform: translateX(4px);
-}
-
-.tree-button:hover i {
-  color: #4CAF50;
-}
-
-.tree-arrow i {
-  font-size: 12px;
-  color: #666;
-  transition: transform 0.2s ease;
-}
-
-/* Color box next to the checkbox */
-.layer-color-box {
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
-  flex-shrink: 0;
+  background-color:  #d3e1d3;
+  
 }
 
 /* Label for checkbox */
@@ -109,11 +192,76 @@ label {
   color: black;
 }
 
-/* Checkbox itself */
-.layer-checkbox-container input {
-  margin-right: 10px;
+/* Hide the default radio appearance */
+.input-box {
+  -webkit-appearance: none;  /* Remove default appearance in Webkit browsers */
+  -moz-appearance: none;     /* Remove default appearance in Firefox */
+  appearance: none;          /* Standardize across browsers */
+  width: 15px;
+  height: 15px;
+  border: 2px solid #4CAF50; /* Border color */
+  border-radius: 4px;        /* Square corners */
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
+/* When the input is checked, show the "dot" inside */
+.input-box:checked {
+  background-color: green ; /* Green background when checked */
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+
+
+/* Layer Controls and Other UI Elements */
+#layer-container,
+#indices-container,
+#farms-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.layer-toggle {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.layer-toggle:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transform: translateX(5px);
+}
+
+.section-divider {
+  height: 2px;
+  background-color: #e0e0e0;
+  margin: 20px 0;
+}
+.coordinates-display {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-left:90px;
+  z-index: 1000;
+  pointer-events: none; /* Prevent blocking interactions with the map */
+}
 /* Map container styles */
 #map-container {
   position: relative;
@@ -134,183 +282,6 @@ label {
   transform: translateX(-30%);
 }
 
-/* Model Viewer Styles */
-.model-viewer {
-  position: fixed;
-  top: 0;
-  right: -50%;
-  width: 50%;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.95);
-  z-index: 1000;
-  
-  overflow: hidden;
-  border-radius: 10px 0 0 10px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  padding: 0;
-  box-sizing: border-box;
-  transition: right 0.4s ease;
-}
-
-.model-viewer.active {
-  right: 0;
-}
-
-.close-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 68, 68, 0.9);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 1002;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.close-button:hover {
-  background: #ff4444;
-  transform: rotate(90deg);
-}
-
-#modelFrame {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: #f8f9fa;
-}
-
-#floorPlanFrame {
-  position: fixed;
-  bottom: 5px;
-  right: 5px;
-  width: 250px;
-  height: 250px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background: white;
-  overflow: hidden;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  z-index: 1003;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.model-viewer.active #floorPlanFrame {
-  opacity: 1;
-  pointer-events: all;
-}
-
-#floorPlanFrame.zoomed {
-  transform: scale(1.2);
-}
-
-#floorPlanFrame:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Button and Control Styles */
-.button-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.model-btn {
-  padding: 12px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  text-align: left;
-  padding-left: 15px;
-}
-
-.model-btn:hover {
-  background-color: #45a049;
-  transform: translateX(5px);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-/* Layer Controls and Other UI Elements */
-#layer-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 10px;
-  background: white;
-  border-radius: 8px;
-}
-#indices-container{
-   display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 10px;
-    background: white;
-    border-radius: 8px;
-}
-#farms-container{
-  display: grid;
-   grid-template-columns: 1fr;
-   gap: 10px;
-   padding: 10px;
-   background: white;
-   border-radius: 8px;
-}
-
-.layer-toggle {
-  background: #ffffff;
-  padding: 12px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.layer-toggle:hover {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  transform: translateX(5px);
-}
-
-/* Section headers styles */
-.section-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin: 15px 0;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #4CAF50;
-}
-
-.subsection-title {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-  margin-top:10px;
-}
-
-.section-divider {
-  height: 2px;
-  background-color: #e0e0e0;
-  margin: 20px 0;
-}
-
-
 
 
 /* Add Font Awesome */
@@ -319,7 +290,7 @@ label {
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Neutra Text', sans-serif; /* Using Neutra Text font */
   overflow: hidden;
 }
 
@@ -330,157 +301,82 @@ body {
   overflow: hidden;
 }
 
-/* Sidebar Styles */
-.sidebar {
-  width: 275px;
-  height: 100vh;
-  background-color: #f4f4f9;
-  padding: 10px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  box-sizing: border-box;
-  position: fixed;
-  left: 0px;
-  transition: left 0.3s ease-in-out;
-  z-index: 1000;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
 
-.sidebar::-webkit-scrollbar {
+/* Hover Pane */
+#hover-pane {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 270px;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  z-index: 1000;
+  padding: 10px;
+  padding-bottom: 0px;
+  overflow: auto;
   display: none;
 }
 
-.sidebar.active {
-  left: 0;
-}
-
-/* Toggle Button Style */
-.sidebar-toggle {
+/* Close Button */
+#hover-pane button {
   position: absolute;
-  left: 20px;
-  top: 20px;
-  z-index: 998;
-  background: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: background-color 0.3s;
 }
 
-.sidebar-toggle:hover {
-  background: #45a049;
-  transform: scale(1.1);
-}
-
-.sidebar-toggle.active {
-  left: 225px;
-  z-index:1200;
-  margin: -10px;
-}
-
-.sidebar-toggle i {
-  font-size: 20px;
-  transition: transform 0.3s ease;
-}
-
-.sidebar-toggle.active i {
-  transform: rotate(180deg);
-}
-
-/* Content and Model Viewer Styles */
-.content-container {
-  flex: 1;
-  margin-left: 0;
-  transition: margin-left 0.3s ease-in-out;
-  position: relative;
-}
-
-.content-container.shifted {
-  margin-left: 250px;
-}
-
-/* Model Viewer Styles */
-
-
-/* Marker for map locations */
-.marker {
-  width: 20px;
-  height: 20px;
+#hover-pane button:hover {
   background-color: red;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-/* Floors button inside the location sidebar */
-.floors {
-  display: block;
-  padding: 5px;
-  margin-bottom: 5px;
-  background-color: #4682B4; /* You can change the color here */
   color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  width:120px;
-  text-align: left;
 }
 
-/* Hover effect for floor buttons */
-.floors:hover {
-  background-color: #000000; /* Hover effect */
+/* Secondary Pane */
+#secondary-pane {
+  position: absolute;
+  bottom: 70px;
+  right: 10px;
+  width: 360px;
+  height: 160px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  z-index: 1000;
+  overflow: auto;
+  display: none;
 }
 
-/* Tree structure styles */
-.tree-item {
+#secondary-pane ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 16px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  background-color: #f8f8f8;
+}
+
+#secondary-pane li {
   margin: 8px 0;
-}
-
-.tree-children {
-  margin-left: 25px;
-  padding-left: 15px;
-  border-left: 2px solid #ddd;
-}
-
-.tree-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
+  padding: 4px;
   border-radius: 4px;
+  transition: background-color 0.3s;
   cursor: pointer;
-  transition: all 0.2s ease;
+  background-color: #f8f8f8;
 }
 
-/* School level */
-#school-checkbox + span {
-  font-weight: bold;
-  color: #2c3e50;
+
+.text-alignment
+{
+  margin:0px;
+  padding-top: 8px;
 }
 
-/* Block level */
-.block-checkbox + span {
-  color: #34495e;
-}
 
-/* Room level */
-.room-checkbox + span {
-  color: #7f8c8d;
-}
-
-.tree-button:hover {
-  background: #e9ecef;
-}
-
-.tree-button input[type="checkbox"] {
-  margin: 0;
-}

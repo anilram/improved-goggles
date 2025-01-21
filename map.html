@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Model and Mapbox Viewer</title>
+    <title>Madagascar Farms</title>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
     <link href="./bundle/css/map.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -15,7 +15,8 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <!-- Map Controls Section -->
-            <div class="section-title" id="Madagascar-sub">Madagascar</div>
+            <div class="section-title" id="Madagascar-sub">
+                <p class="text-alignment">MADAGASCAR</p></div>
             <div class="layer-sidebar">
                 <div id="layer-container">
                     <div class="subsection-title" id="layer-sub">Layers
@@ -33,8 +34,8 @@
             </div>
             <div class="layer-sidebar">
                 <div id="farms-container">
-                    <div class="subsection-title" id="farm-sub">Farms
-                       
+                    <div class="subsection-title" id="farm-sub" style="display:flex">
+                        <p class="text-alignment">Farms</p>
                     </div>
                 </div>
             </div>
@@ -47,6 +48,9 @@
             <!-- Map Container -->
             <div id="map-container" class="map-container"></div>
         </div>
+
+         <!-- Coordinates Display -->
+         <div id="coordinates-display" class="coordinates-display"></div>
     </div>
 
     <!-- Scripts -->
